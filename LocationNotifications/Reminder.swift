@@ -17,7 +17,7 @@ enum ReminderType{
 struct Reminder{
     var name: String
     var location: CLLocationCoordinate2D
-    var rangeFromLocation: Int
     var typeOfReminder: ReminderType
+    var uuid: UUID
 }
 

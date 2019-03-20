@@ -13,9 +13,9 @@
         <!--Reminders-->
         <scene sceneID="4ox-Pj-ucr">
             <objects>
-                <tableViewController id="BDx-qz-xo8" sceneMemberID="viewController">
+                <tableViewController id="BDx-qz-xo8" customClass="RemindersTableViewController" customModule="LocationNotifications" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="28" id="GdV-xc-U8k">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="M3Y-Ph-Rij">
@@ -55,7 +55,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="Mcf-7B-o9y">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="Mcf-7B-o9y" customClass="ReminderTableViewCell" customModule="LocationNotifications" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="103" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mcf-7B-o9y" id="l3c-0n-B0g">
@@ -75,6 +75,9 @@
                                         <constraint firstItem="bD6-13-qUK" firstAttribute="centerY" secondItem="l3c-0n-B0g" secondAttribute="centerY" id="aGM-Hn-5iF"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleOfReminder" destination="bD6-13-qUK" id="EHL-Vh-snz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -91,25 +94,25 @@
             </objects>
             <point key="canvasLocation" x="656.79999999999995" y="128.18590704647679"/>
         </scene>
-        <!--View Controller-->
+        <!--Reminder Input View Controller-->
         <scene sceneID="sbE-N1-Xd1">
             <objects>
-                <viewController id="z7w-if-7Df" sceneMemberID="viewController">
+                <viewController id="z7w-if-7Df" customClass="ReminderInputViewController" customModule="LocationNotifications" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JU9-yQ-pFD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reminder Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQa-Qv-Fkk">
-                                <rect key="frame" x="0.0" y="88" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="T9z-yQ-udr"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knT-12-8YE">
-                                <rect key="frame" x="0.0" y="163" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="75" width="414" height="75"/>
                                 <color key="backgroundColor" red="0.98990135820000003" green="0.96274418949999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="5QR-da-H8z"/>
@@ -118,9 +121,12 @@
                                 <state key="normal" title="Location">
                                     <color key="titleColor" red="1" green="0.57584457290000002" blue="0.067523934490000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="locationButtonPressed:" destination="z7w-if-7Df" eventType="touchUpInside" id="yTx-lx-Txy"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BFb-m0-4zb">
-                                <rect key="frame" x="0.0" y="238" width="414" height="41"/>
+                                <rect key="frame" x="0.0" y="150" width="414" height="41"/>
                                 <color key="backgroundColor" red="0.98990135820000003" green="0.96274418949999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fqX-Br-dDl"/>
@@ -129,12 +135,15 @@
                                     <segment title="When I Arrive"/>
                                     <segment title="When I Leave"/>
                                 </segments>
+                                <connections>
+                                    <action selector="reminderSwitcherTapped:" destination="z7w-if-7Df" eventType="valueChanged" id="3mD-ka-J88"/>
+                                </connections>
                             </segmentedControl>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kcY-dK-wfn">
-                                <rect key="frame" x="0.0" y="279" width="414" height="508"/>
+                                <rect key="frame" x="0.0" y="191" width="414" height="508"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cjp-1l-eWY">
-                                <rect key="frame" x="0.0" y="279" width="414" height="508"/>
+                                <rect key="frame" x="0.0" y="191" width="414" height="508"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select a location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DH1-Nr-Gak">
                                         <rect key="frame" x="20" y="235" width="374" height="38.5"/>
@@ -152,7 +161,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTN-LA-Up5">
-                                <rect key="frame" x="0.0" y="787" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="699" width="414" height="75"/>
                                 <color key="backgroundColor" red="1" green="0.57584457290000002" blue="0.067523934490000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="BH5-HU-ljx"/>
@@ -161,6 +170,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.98990135820000003" green="0.96274418949999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="z7w-if-7Df" eventType="touchUpInside" id="0wP-e4-iru"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.57584457290000002" blue="0.067523934490000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -189,7 +201,13 @@
                         <viewLayoutGuide key="safeArea" id="jNj-xE-b5a"/>
                     </view>
                     <connections>
+                        <outlet property="blockerView" destination="Cjp-1l-eWY" id="AAy-YX-mgC"/>
+                        <outlet property="locationButton" destination="knT-12-8YE" id="dEm-12-CUQ"/>
+                        <outlet property="mapView" destination="kcY-dK-wfn" id="QqE-ZH-Dt1"/>
+                        <outlet property="reminderNameTextField" destination="GQa-Qv-Fkk" id="Tzd-Ue-TWE"/>
+                        <outlet property="reminderTypeSwitcher" destination="BFb-m0-4zb" id="rL7-IW-7Jz"/>
                         <outlet property="searchDisplayController" destination="Ace-mU-GRL" id="kYZ-yz-9PO"/>
+                        <segue destination="6XH-nI-ak7" kind="show" identifier="location" id="JVa-Bf-tVa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Pq-fF-9Q2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -204,11 +222,55 @@
             </objects>
             <point key="canvasLocation" x="1586.9565217391305" y="128.57142857142856"/>
         </scene>
+        <!--Location Updating Table View Controller-->
+        <scene sceneID="tRS-dK-qxC">
+            <objects>
+                <tableViewController id="6XH-nI-ak7" customClass="LocationUpdatingTableViewController" customModule="LocationNotifications" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2xh-1J-GFH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" textLabel="Ajv-yQ-CtE" detailTextLabel="3HA-G1-J4V" style="IBUITableViewCellStyleSubtitle" id="gCR-P7-hvf">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gCR-P7-hvf" id="Sqp-sK-s4b">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ajv-yQ-CtE">
+                                            <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3HA-G1-J4V">
+                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6XH-nI-ak7" id="HD0-QF-D5T"/>
+                            <outlet property="delegate" destination="6XH-nI-ak7" id="Nf7-nT-VPo"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ouR-cP-boj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2529" y="128"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="aMv-lg-mAD">
             <objects>
                 <navigationController id="C2W-Q3-Rx8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sMk-l5-Sag">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="sMk-l5-Sag">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

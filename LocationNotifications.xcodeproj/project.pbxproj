@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F17AEE5223B51E000B2E78C /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F17AEE4223B51E000B2E78C /* LocationTableViewCell.swift */; };
+		4F17AEE5223B51E000B2E78C /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F17AEE4223B51E000B2E78C /* ReminderTableViewCell.swift */; };
 		4F17AEE7223B63E000B2E78C /* ReminderHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F17AEE6223B63E000B2E78C /* ReminderHandler.swift */; };
+		4F17AEE9223C376A00B2E78C /* ReminderInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F17AEE8223C376A00B2E78C /* ReminderInputViewController.swift */; };
+		4F17AEEB223C38BC00B2E78C /* LocationUpdatingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F17AEEA223C38BC00B2E78C /* LocationUpdatingTableViewController.swift */; };
+		4F17AEF622402BC200B2E78C /* LocationNotificationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F17AEF522402BC200B2E78C /* LocationNotificationsTests.swift */; };
+		4F1EE35B2242AA78003A744A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1EE35A2242AA77003A744A /* LocationManager.swift */; };
 		4F570A592239FCD800A59614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F570A582239FCD800A59614 /* AppDelegate.swift */; };
 		4F570A5E2239FCD800A59614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F570A5C2239FCD800A59614 /* Main.storyboard */; };
 		4F570A612239FCD800A59614 /* LocationNotifications.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F570A5F2239FCD800A59614 /* LocationNotifications.xcdatamodeld */; };
@@ -18,9 +22,25 @@
 		4F570A70223A054000A59614 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F570A6F223A054000A59614 /* Reminder.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4F17AEF822402BC200B2E78C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F570A4D2239FCD800A59614 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F570A542239FCD800A59614;
+			remoteInfo = LocationNotifications;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		4F17AEE4223B51E000B2E78C /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		4F17AEE4223B51E000B2E78C /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		4F17AEE6223B63E000B2E78C /* ReminderHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHandler.swift; sourceTree = "<group>"; };
+		4F17AEE8223C376A00B2E78C /* ReminderInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderInputViewController.swift; sourceTree = "<group>"; };
+		4F17AEEA223C38BC00B2E78C /* LocationUpdatingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUpdatingTableViewController.swift; sourceTree = "<group>"; };
+		4F17AEF322402BC200B2E78C /* LocationNotificationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationNotificationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F17AEF522402BC200B2E78C /* LocationNotificationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationsTests.swift; sourceTree = "<group>"; };
+		4F17AEF722402BC200B2E78C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F1EE35A2242AA77003A744A /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4F570A552239FCD800A59614 /* LocationNotifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationNotifications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F570A582239FCD800A59614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F570A5D2239FCD800A59614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4F17AEF022402BC100B2E78C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F570A522239FCD800A59614 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,10 +70,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F17AEEE223F4CD000B2E78C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4F570A6D223A034600A59614 /* RemindersTableViewController.swift */,
+				4F17AEE4223B51E000B2E78C /* ReminderTableViewCell.swift */,
+				4F17AEE8223C376A00B2E78C /* ReminderInputViewController.swift */,
+				4F17AEEA223C38BC00B2E78C /* LocationUpdatingTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4F17AEF422402BC200B2E78C /* LocationNotificationsTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F17AEF522402BC200B2E78C /* LocationNotificationsTests.swift */,
+				4F17AEF722402BC200B2E78C /* Info.plist */,
+			);
+			path = LocationNotificationsTests;
+			sourceTree = "<group>";
+		};
 		4F570A4C2239FCD800A59614 = {
 			isa = PBXGroup;
 			children = (
 				4F570A572239FCD800A59614 /* LocationNotifications */,
+				4F17AEF422402BC200B2E78C /* LocationNotificationsTests */,
 				4F570A562239FCD800A59614 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				4F570A552239FCD800A59614 /* LocationNotifications.app */,
+				4F17AEF322402BC200B2E78C /* LocationNotificationsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,9 +113,9 @@
 			children = (
 				4F570A582239FCD800A59614 /* AppDelegate.swift */,
 				4F17AEE6223B63E000B2E78C /* ReminderHandler.swift */,
-				4F570A6D223A034600A59614 /* RemindersTableViewController.swift */,
-				4F17AEE4223B51E000B2E78C /* LocationTableViewCell.swift */,
+				4F1EE35A2242AA77003A744A /* LocationManager.swift */,
 				4F570A6F223A054000A59614 /* Reminder.swift */,
+				4F17AEEE223F4CD000B2E78C /* ViewController */,
 				4F570A5C2239FCD800A59614 /* Main.storyboard */,
 				4F570A622239FCDE00A59614 /* Assets.xcassets */,
 				4F570A642239FCDE00A59614 /* LaunchScreen.storyboard */,
@@ -79,6 +128,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4F17AEF222402BC100B2E78C /* LocationNotificationsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F17AEFA22402BC200B2E78C /* Build configuration list for PBXNativeTarget "LocationNotificationsTests" */;
+			buildPhases = (
+				4F17AEEF22402BC100B2E78C /* Sources */,
+				4F17AEF022402BC100B2E78C /* Frameworks */,
+				4F17AEF122402BC100B2E78C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F17AEF922402BC200B2E78C /* PBXTargetDependency */,
+			);
+			name = LocationNotificationsTests;
+			productName = LocationNotificationsTests;
+			productReference = 4F17AEF322402BC200B2E78C /* LocationNotificationsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4F570A542239FCD800A59614 /* LocationNotifications */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F570A6A2239FCDE00A59614 /* Build configuration list for PBXNativeTarget "LocationNotifications" */;
@@ -106,6 +173,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Akshay Verma";
 				TargetAttributes = {
+					4F17AEF222402BC100B2E78C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4F570A542239FCD800A59614;
+					};
 					4F570A542239FCD800A59614 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -125,11 +196,19 @@
 			projectRoot = "";
 			targets = (
 				4F570A542239FCD800A59614 /* LocationNotifications */,
+				4F17AEF222402BC100B2E78C /* LocationNotificationsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4F17AEF122402BC100B2E78C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F570A532239FCD800A59614 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -143,20 +222,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4F17AEEF22402BC100B2E78C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F17AEF622402BC200B2E78C /* LocationNotificationsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F570A512239FCD800A59614 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F17AEEB223C38BC00B2E78C /* LocationUpdatingTableViewController.swift in Sources */,
 				4F570A612239FCD800A59614 /* LocationNotifications.xcdatamodeld in Sources */,
-				4F17AEE5223B51E000B2E78C /* LocationTableViewCell.swift in Sources */,
+				4F17AEE5223B51E000B2E78C /* ReminderTableViewCell.swift in Sources */,
 				4F570A6E223A034600A59614 /* RemindersTableViewController.swift in Sources */,
 				4F570A592239FCD800A59614 /* AppDelegate.swift in Sources */,
 				4F17AEE7223B63E000B2E78C /* ReminderHandler.swift in Sources */,
+				4F17AEE9223C376A00B2E78C /* ReminderInputViewController.swift in Sources */,
 				4F570A70223A054000A59614 /* Reminder.swift in Sources */,
+				4F1EE35B2242AA78003A744A /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F17AEF922402BC200B2E78C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F570A542239FCD800A59614 /* LocationNotifications */;
+			targetProxy = 4F17AEF822402BC200B2E78C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4F570A5C2239FCD800A59614 /* Main.storyboard */ = {
@@ -178,6 +276,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4F17AEFB22402BC200B2E78C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JVHWM5YBG;
+				INFOPLIST_FILE = LocationNotificationsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.akshayverma.LocationNotificationsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocationNotifications.app/LocationNotifications";
+			};
+			name = Debug;
+		};
+		4F17AEFC22402BC200B2E78C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JVHWM5YBG;
+				INFOPLIST_FILE = LocationNotificationsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.akshayverma.LocationNotificationsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocationNotifications.app/LocationNotifications";
+			};
+			name = Release;
+		};
 		4F570A682239FCDE00A59614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -301,6 +439,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JVHWM5YBG;
 				INFOPLIST_FILE = LocationNotifications/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,6 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JVHWM5YBG;
 				INFOPLIST_FILE = LocationNotifications/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,6 +473,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4F17AEFA22402BC200B2E78C /* Build configuration list for PBXNativeTarget "LocationNotificationsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F17AEFB22402BC200B2E78C /* Debug */,
+				4F17AEFC22402BC200B2E78C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4F570A502239FCD800A59614 /* Build configuration list for PBXProject "LocationNotifications" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
