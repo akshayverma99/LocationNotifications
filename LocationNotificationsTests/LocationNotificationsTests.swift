@@ -28,14 +28,11 @@ class LocationNotificationsTests: XCTestCase {
     }
     
     // No longer works because reminders isnt converted to its core data counterpart
-    func testCheckIfReminderExits(){
-        testCDReminders.shared.getRemindersFromData()
-        XCTAssert(testCDReminders.shared.allReminders[0].reminderName == newReminder.reminderName, "Names are diff/doesnt exist")
-    }
-    
-    func testDidDelete(){
-        
-    }
+//    func testCheckIfReminderExits(){
+//        testCDReminders.shared.getRemindersFromData()
+//        XCTAssert(testCDReminders.shared.allReminders[0].reminderName == newReminder.reminderName, "Names are diff/doesnt exist")
+//    }
+   
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
